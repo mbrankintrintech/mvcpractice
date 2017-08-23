@@ -1,0 +1,24 @@
+﻿@model IEnumerable<OdeToFood.Models.RestaurantReview>
+
+@{ 
+    Layout = "~/Views/Shared/_Layout3.cshtml";
+
+}
+
+<h1>Reviews!</h1>
+
+
+@section featured{
+We are showing the latest @Model.Count() reviews.
+}
+
+@foreach (var item in Model)
+{
+    @:Review
+    <div class="review">
+        <h4>@item.Name</h4>
+        <span>@item.Rating</span>
+        <p>@item.City, @item.Country</p>
+    </div>
+    @:}
+}
